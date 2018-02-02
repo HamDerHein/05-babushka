@@ -1,0 +1,81 @@
+.templatemodtager {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto, 1fr);
+    max-width: 1000px;
+    margin: 0 auto;
+    grid-gap: 10px;
+}
+
+.retter {
+
+    border: 1px solid #666;
+    padding: 10px;
+
+}
+
+.retter .billede {
+
+    height: 200px;
+    align-items: center;
+}
+
+.retter .navn {
+    height: 50px;
+    text-align: center;
+}
+
+.retter .prislinie {
+    font-size: 2em;
+}
+
+.retter:nth-child(odd) {
+    background: #ccc;
+}
+
+
+.kortBeskrivelse:nth-child(even) {
+
+    background: white;
+    padding: 0.5em 1em;
+
+}
+
+.kortBeskrivelse:nth-child(odd) {
+    background: #ccc;
+    padding: 0.5em 1em;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:768px) {
+
+    .templatemodtager {
+
+        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    .templatemodtager {
+
+        max-width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+nav {
+
+    margin-top: 5vw;
+}
+
+#overskrift {
+
+    color: orangered;
+}

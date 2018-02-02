@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+
+    <nav>
+        <button id=filter-alle>Alle</button>
+        <button id=filter-forretter>Forretter</button>
+        <button id=filter-hovedretter>Hovedretter</button>
+        <button id=filter-desserter>Deserter</button>
+        <button id=filter-sideorders>Side orders</button>
+        <button id=filter-drikkevarer>Drikkevarer</button>
+    </nav>
+
+    <main>
+        <h1 id="overskrift" data-overskrift>Menu</h1>
+        <section id="menu_container" data-container></section>
+    </main>
+
+    <div class="templatemodtager"></div>
+
+    <template class="mytemplate">
+        <div class="retter">
+        <h1 class="navn"></h1>
+        <img class="billede" src="" alt="">
+        <p class="prislinie">
+            <span class="prisTag"> Pris: </span>
+            <span class="pris">--------</span>
+            <span class="kr"> kr</span>
+        </p>
+        <p class="kortBeskrivelse"></p>
+        
+        
+        
+
+    </div>
+        </template>
+
+    <script src="javascript.js">
+    </script>
+</body>
+
+</html>
