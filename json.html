@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <style>
+        .templatemodtager {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(auto, 1fr);
+            max-width: 1000px;
+            margin: 0 auto;
+            grid-gap: 10px;
+        }
+
+        .retter {
+
+            border: 1px solid #666;
+            padding: 10px;
+
+        }
+
+        .retter .billede {
+
+            height: 200px;
+            align-items: center;
+        }
+
+        .retter .navn {
+            height: 50px;
+            text-align: center;
+        }
+
+        .retter .prislinie {
+            font-size: 2em;
+        }
+
+        .retter:nth-child(odd) {
+            background: #ccc;
+        }
+
+
+        .kortBeskrivelse:nth-child(even) {
+
+            background: white;
+            padding: 0.5em 1em;
+
+        }
+
+        .kortBeskrivelse:nth-child(odd) {
+            background: #ccc;
+            padding: 0.5em 1em;
+        }
+
+
+
+
+
+
+
+        @media screen and (max-width:768px) {
+
+            .templatemodtager {
+
+                max-width: 100%;
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width:480px) {
+
+            .templatemodtager {
+
+                max-width: 100%;
+                grid-template-columns: repeat(1, 1fr);
+            }
+        }
+
+    </style>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+
+    <div class="templatemodtager"></div>
+
+    <template class="mytemplate">
+        <div class="retter">
+        <h1 class="navn"></h1>
+        <img class="billede" src="" alt="">
+        <p class="prislinie">
+            <span class="prisTag"> Pris: </span>
+            <span class="pris">--------</span>
+            <span class="kr"> kr</span>
+        </p>
+        <p class="kortBeskrivelse"></p>
+        
+        
+        
+
+    </div>
+        </template>
+
+    <script>
+        let retter;
+
+        document.addEventListener("DOMContentLoaded", loadJson);
+
+        let modtager = document.querySelector(".templatemodtager");
+        let template = document.querySelector(".mytemplate");
+
+        async function loadJson() {
+
+            let minListe = await fetch("menu.json");
+            retter = await minListe.json();
+            console.log(retter);
+
+            visRetter(retter);
+        }
+
+        //let prisTag = document.getElementsByClassName("prisTag");
+
+        function visRetter() {
+
+            retter.forEach(hverRet => {
+
+                let klon = template.cloneNode(true).content;
+                klon.querySelector(".navn").textContent = hverRet.navn;
+                klon.querySelector(".kortBeskrivelse").textContent = hverRet.kortbeskrivelse;
+                klon.querySelector(".pris").textContent = hverRet.pris;
+                klon.querySelector(".billede").src = "/imgs/small/" + hverRet.billede +
+                    "-sm.jpg";
+                klon.querySelector(".billede").alt = "billede af" + hverRet.navn;
+
+
+                modtager.appendChild(klon);
+            })
+
+
+
+
+            //            document.querySelector(".navn").textContent = personer[1].fornavn + " " + personer[1].efternavn;
+            //            document.querySelector(".mail").textContent = personer[1].mail;
+        }
+
+
+        //        console.log(personer[0].fornavn + " " + personer[2].efternavn);
+
+    </script>
+</body>
+
+</html>
