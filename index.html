@@ -14,11 +14,11 @@
 
     <nav>
         <button id=filter-alle>Alle</button>
-        <button id=filter-forretter>Forretter</button>
-        <button id=filter-hovedretter>Hovedretter</button>
-        <button id=filter-desserter>Deserter</button>
-        <button id=filter-sideorders>Side orders</button>
-        <button id=filter-drikkevarer>Drikkevarer</button>
+        <button id=filter-forretter data-forretter>Forretter</button>
+        <button id=filter-hovedretter data-hovedretter>Hovedretter</button>
+        <button id=filter-desserter data-desserter>Deserter</button>
+        <button id=filter-sideorders data-siderorders>Side orders</button>
+        <button id=filter-drikkevarer data-drikkevarer>Drikkevarer</button>
     </nav>
 
     <main>
@@ -28,16 +28,16 @@
 
     <div class="templatemodtager"></div>
 
-    <template class="mytemplate">
-        <div class="retter">
-        <h1 class="navn"></h1>
+    <template class="mytemplate" data-mytemplate>
+        <div class="retter" data-retter>
+        <h1 class="navn" data-navn></h1>
         <img class="billede" src="" alt="">
-        <p class="prislinie">
-            <span class="prisTag"> Pris: </span>
-            <span class="pris">--------</span>
-            <span class="kr"> kr</span>
+        <p class="prislinie" data-prislinie>
+            <span class="prisTag" data-prisTag> Pris: </span>
+            <span class="pris" data-pris>--------</span>
+            <span class="kr" data-kr> kr</span>
         </p>
-        <p class="kortBeskrivelse"></p>
+        <p class="kortBeskrivelse" data-kortBeskrivelse></p>
         
         
         

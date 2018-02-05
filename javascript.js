@@ -52,7 +52,7 @@
  // kig på slide slide 6 fra freddag d. 2.feb, der forklares det nedenunder
 
  function visRetter(hvilkeretter, overskrift) {
-
+     //Henter overskriften fra HTML, bliver skiftet 
      document.querySelector("[data-overskrift]").textContent = overskrift;
 
      let modtager = document.querySelector(".templatemodtager");
